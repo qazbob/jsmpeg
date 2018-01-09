@@ -76,13 +76,6 @@ var JSMpeg = {
 			: Date.now() / 1000;
 	},
 
-	CreateVideoElements: function() {
-		var elements = document.querySelectorAll('.jsmpeg');
-		for (var i = 0; i < elements.length; i++) {
-			new JSMpeg.VideoElement(elements[i]);
-		}
-	},
-
 	Fill: function(array, value) {
 		if (array.fill) {
 			array.fill(value);
@@ -94,12 +87,3 @@ var JSMpeg = {
 		}
 	}
 };
-
-// Automatically create players for all found <div class="jsmpeg"/> elements.
-if (document.readyState === 'complete') {
-	JSMpeg.CreateVideoElements();
-}
-else {
-	document.addEventListener('DOMContentLoaded', JSMpeg.CreateVideoElements);
-}
-
